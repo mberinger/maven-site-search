@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project>
+    <body>
+        <breadcrumbs>
+            <item name="Parent" href=".." />
+        </breadcrumbs>
+        <links>
+            <item name="Search" href="search.html" />
+        </links>
+        <menu name="Custom documentation">
+            <item name="Root file" href="index.html" />
+            <item name="Sub directory" href="subDir/index.html" collapse="false">
+                <item name="Sub directory file" href="subDir/index.html" />
+            </item>
+        </menu>
+        <menu ref="info" />
+        <menu ref="reports" />
+    </body>
+</project>

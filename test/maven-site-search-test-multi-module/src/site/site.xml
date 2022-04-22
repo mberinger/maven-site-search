@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project>
+    <skin>
+        <groupId>org.apache.maven.skins</groupId>
+        <artifactId>maven-fluido-skin</artifactId>
+        <version>1.9</version>
+    </skin>
+    <body>
+        <links>
+            <item name="Search" href="search.html" />
+        </links>
+        <head>
+            <![CDATA[
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+            <style>
+                #search {
+                    float: right
+                }
+
+                #search input {
+                    padding: 0px;
+                    margin: 0px;
+                }
+
+                #search button {
+                    padding: 0px;
+                    margin: 0px;
+                    height: 20px;
+                    width: 35px;
+                    border: 0;
+                    border-radius: 1px;
+                    background-color: #75a8fb;
+                    color: white;
+                    outline: none;
+                }
+
+                #search button:hover {
+                     background-color: #5193fb;
+                }
+            </style>
+            <script>
+                $(document).ready(function() {
+                    // obtain the relative search page href from link item then hide
+                    const searchLink = $("a[title|='Search']");
+                    const href = searchLink.attr("href");
+                    searchLink.hide();
+                    const searchWidget = '<li id="search"><form action=' + href + '><input type="text" name="q" id="search_input"><button class="fas fa-search"></button></form></li>';
+                    $(".breadcrumb").append(searchWidget);
+                });
+            </script>
+        ]]>
+        </head>
+        <menu name="Custom documentation">
+            <item name="Root file" href="index.html" />
+            <item name="Sub directory" href="subDir/index.html" collapse="false">
+                <item name="Sub directory file" href="subDir/index.html" />
+            </item>
+        </menu>
+        <menu ref="info" />
+        <menu ref="reports" />
+        <menu ref="modules" />
+    </body>
+</project>
